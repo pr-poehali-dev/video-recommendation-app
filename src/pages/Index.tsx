@@ -121,7 +121,12 @@ export default function Index() {
             </button>
           </div>
           
-          <Button variant="ghost" size="icon" className="text-white hover:bg-white/20">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="text-white hover:bg-white/20"
+            onClick={() => navigate('/search')}
+          >
             <Icon name="Search" size={20} />
           </Button>
         </div>
@@ -194,7 +199,10 @@ export default function Index() {
             <Icon name="Home" size={24} />
             <span className="text-xs">Главная</span>
           </button>
-          <button className="flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
+          <button 
+            className="flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors"
+            onClick={() => navigate('/search')}
+          >
             <Icon name="Compass" size={24} />
             <span className="text-xs">Поиск</span>
           </button>

@@ -193,7 +193,10 @@ export default function Profile() {
             <Icon name="Home" size={24} />
             <span className="text-xs">Главная</span>
           </button>
-          <button className="flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
+          <button 
+            className="flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors"
+            onClick={() => navigate('/search')}
+          >
             <Icon name="Compass" size={24} />
             <span className="text-xs">Поиск</span>
           </button>
