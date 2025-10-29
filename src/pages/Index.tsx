@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -55,6 +56,7 @@ const mockVideos: Video[] = [
 ];
 
 export default function Index() {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<'feed' | 'subscriptions' | 'trending'>('feed');
   const [videos, setVideos] = useState<Video[]>(mockVideos);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
@@ -205,7 +207,10 @@ export default function Index() {
             <Icon name="Bell" size={24} />
             <span className="text-xs">Уведомления</span>
           </button>
-          <button className="flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors">
+          <button 
+            className="flex flex-col items-center gap-1 text-muted-foreground hover:text-primary transition-colors"
+            onClick={() => navigate('/profile')}
+          >
             <Icon name="User" size={24} />
             <span className="text-xs">Профиль</span>
           </button>
